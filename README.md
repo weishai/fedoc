@@ -1,3 +1,3 @@
 # Fedoc
 
-The tool for create Front-end doc
+The tool for create Front-end doc.

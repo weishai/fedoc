@@ -9,39 +9,34 @@
         <div class="search-results"></div>
       </div>
     </li> -->
-    <li class="bold"><a href="about.html" class="waves-effect waves-teal">About</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Getting Started</a></li>
-    <li class="no-padding">
-      <ul class="collapsible collapsible-accordion">
-        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">CSS</a>
-          <div class="collapsible-body">
-            <ul>
-              <li><a href="#">Color</a></li>
-              <li><a href="#">Color</a></li>
-              <li><a href="#">Color</a></li>
-            </ul>
-          </div>
+    {% if site.data.category %}
+
+      {% for cat in site.data.category %}
+
+        {% if cat.subcat != null %}
+      
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">{{cat.title}}</a>
+              <div class="collapsible-body">
+                <ul>
+                  {% for subcat in cat.subcat %}
+                  <li><a href="{{site.categories[subcat.catname]}}">{{subcat.title}}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+          </ul>
         </li>
-        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">CSS</a>
-          <div class="collapsible-body">
-            <ul>
-              <li><a href="#">Color</a></li>
-              <li><a href="#">Color</a></li>
-              <li><a href="#">Color</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">CSS</a>
-          <div class="collapsible-body">
-            <ul>
-              <li><a href="#">Color</a></li>
-              <li><a href="#">Color</a></li>
-              <li><a href="#">Color</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Mobile</a></li>
+      
+        {% else %}
+
+        <li class="bold"><a href="about.html" class="waves-effect waves-teal">{{cat.title}}</a></li>
+
+        {% endif %}
+
+      {% endfor %}
+
+    {% endif %}
   </ul>
 </header>

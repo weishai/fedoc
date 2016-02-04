@@ -17,12 +17,11 @@
       
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
-            <li class="bold">
-              <a class="collapsible-header {% if cat.catname == page.categories[0] %}active{% endif %} waves-effect waves-teal">{{cat.title}}</a>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">{{cat.title}}</a>
               <div class="collapsible-body">
                 <ul>
-                  {% for post in site.categories.[cat.catname] %}
-                  <li class="{% if post.title == page.title %}active{% endif %}"><a href="{{post.url}}">{{post.title}}</a></li>
+                  {% for subcat in cat.subcat %}
+                  <li><a href="{{site.categories[subcat.catname]}}">{{subcat.title}}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -32,7 +31,7 @@
       
         {% else %}
 
-        <li class="bold {% if cat.catname == page.name %}active{% endif %}"><a href="{{site.url}}/{{cat.href}}" class="waves-effect waves-teal">{{cat.title}}</a></li>
+        <li class="bold"><a href="about.html" class="waves-effect waves-teal">{{cat.title}}</a></li>
 
         {% endif %}
 

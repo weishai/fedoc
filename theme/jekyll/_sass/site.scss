@@ -84,7 +84,11 @@ ul.side-nav.fixed {
   li {
     line-height: 44px;
 
-    &:hover, &.active {
+    &:hover{
+      background-color: rgba(0,0,0,.02);
+    }
+
+    &.active {
       background-color: rgba(0,0,0,.05);
     }
 

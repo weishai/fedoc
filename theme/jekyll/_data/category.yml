@@ -1,18 +1,8 @@
 - catname: "about"
   title: "关于"
-  href: "/about/"
-
-- catname: "getstarted"
-  title: "快速入门"
-  href: "/getstarted/"
+  href: "about.html"
 
 - catname: "components"
   title: "组件"
   href: "/components/"
-  subcat: 
-    - catname: "nav"
-      title: "nav"
-      href: "/components/nav/"
-    - catname: "button"
-      title: "buton"
-      href: "/components/button/"
+  subcat: true
